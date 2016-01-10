@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ram Lmn" />
+
+    <title>Translate test</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="import" href="fab.html">
+
+  </head>
+  <body>
+
+    <!--<element-fab bg="7.png"></element-fab>-->
+
+    <div class="outer">
+      <div class="inner">
+        <div class="overlay"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.3.2/gl-matrix-min.js"></script>
+    <script>
+
+      'use strict';
+    
+      const outer = document.querySelector('.outer');
+      const inner = document.querySelector('.inner');
+      const overlay = document.querySelector('.overlay');
+
+      let BCR = outer.getBoundingClientRect();
+
+      let initialDiameter = 72;
+
+      let finalScale = 1;
+      let initialScale = initialDiameter / BCR.height;
+
+      let initialOpacity = 1;
+      let finalOpacity = 0;
+
+      let initialTransY = 0;
+      let finalTransY = 0;
+      let initialTransX = 0;
+      let finalTransX = 0;
+
+      const duration = 300;
+      
+      let start = null;
+      let isAnimating = false;
+      let timingFunction = (k) => {
+        if ((k *= 2) < 1) {
+          return 0.5 * k * k * k;
+        }
+        return 0.5 * ((k -= 2) * k * k + 2);
+      };
+
+    
+      function update(scale, opacity, transX, transY) {
+    
+        let matrix = mat4.fromValues(
+          scale, 0, 0, 0,
+          0, scale, 0, 0,
+          0, 0, 1, -(1 / 500),
+          0, 0, 0, 1
+        );
+
+        let matrix2 = mat4.fromValues(
+          scale, 0, 0, 0,
+          0, scale, 0, 0,
+          0, 0, 1, -(1 / 500),
+          transX, transY, 0, 1
+        );
+    
+        let invMatrix1 = mat4.create();
+        mat4.invert(invMatrix1, matrix);
+
+        matrix = Array.from(matrix);
+        invMatrix1 = Array.from(invMatrix1);
+
+        overlay.style.opacity = opacity;
+    
+        outer.style.transform = `matrix3d(${matrix2.join(',')})`;
+        inner.style.transform = `matrix3d(${invMatrix1.join(',')})`;
+        
+      }
+
+      function loop() {
+
+        if (Date.now() >= start + duration) {
+          update(finalScale, finalOpacity, finalTransX, finalTransY);
+
+          [initialScale, finalScale] = [finalScale, initialScale];
+          [initialOpacity, finalOpacity] = [finalOpacity, initialOpacity];
+          [initialTransY, finalTransY] = [finalTransY, initialTransY];
+          [initialTransX, finalTransX] = [finalTransX, initialTransX];
+
+          outer.style.willChange = '';
+          inner.style.willChange = '';
+          overlay.style.willChange = '';
+
+          isAnimating = false;
+
+          return;
+        }
+
+        let now = Date.now();
+        let final = start + duration;
+
+        let factor = timingFunction((now - start) / duration);
+
+        let scale = (finalScale - initialScale) * factor + initialScale;
+        let opacity = (finalOpacity - initialOpacity) * factor + initialOpacity;
+        let transY = (finalTransY - initialTransY) * factor + initialTransY;
+        let transX = (finalTransX - initialTransX) * factor + initialTransX;
+
+        update(scale, opacity, transX, transY);
+
+        requestAnimationFrame(loop);
+      }
+    
+      requestAnimationFrame(() =>{
+        update(initialScale, initialOpacity, initialTransX, initialTransY);
+      });
+
+      inner.addEventListener('click', () => {
+
+        if (isAnimating) {
+          return;
+        }
+
+        isAnimating = true;
+
+        start = Date.now();
+
+        outer.style.willChange = 'transform';
+        inner.style.willChange = 'transform';
+        overlay.style.willChange = 'opacity';
+
+        requestAnimationFrame(loop);
+      });
+    
+    </script>
+
+  </body>
+</html>

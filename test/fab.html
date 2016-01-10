@@ -1,0 +1,87 @@
+<template id="element-fab-tmpl">
+
+  <style>
+  
+    :host {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+
+      --initial-fab-width: 200px;
+      --initial-fab-height: 200px;
+
+      --final-fab-width: 350px;
+      --final-fab-height: 450px;
+
+      --container-diameter: 570.087712549569px;
+    }
+
+    .container {
+      width: var(--container-diameter);
+      height: var(--container-diameter);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      border-radius: 50%;
+      overflow: hidden;
+
+      background: transparent;
+
+      transform-origin: center bottom;
+    }
+
+    .container.last {
+      transform: scale(1);
+    }
+
+    .element {
+      width: var(--final-fab-width);
+      height: var(--final-fab-height);
+      cursor: pointer;
+
+      --final-tranlateY: calc(var(--final-fab-height) / 2 - var(--initial-fab-height) / 2);
+
+      transform: translateY(var(--final-tranlateY));
+      opacity: 0;
+    }
+
+    .element.last {
+      cursor: default;
+
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .underlay {
+      width: var(--container-diameter);
+      height: var(--container-diameter);
+
+      border-radius: 50%;
+      background: #212121;
+      opacity: 1;
+
+      position: absolute;
+      z-index: -100;
+    }
+
+    .underlay.last {
+      opacity: 0;
+      transform: scale(1);
+    }
+  
+  </style>
+
+  <div class="container">
+
+    <div class="underlay"></div>
+
+    <div class="element"></div>
+
+  </div>
+
+</template>
+
+<script src="fab.js"></script>

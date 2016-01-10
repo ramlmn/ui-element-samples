@@ -1,0 +1,34 @@
+{
+  "name": "UI-element-samples",
+  "short_name": "UI-element-samples",
+  "icons": [{
+    "src": "img/touch/logo_128.png",
+    "type": "image/png",
+    "sizes": "128x128"
+  }, {
+    "src": "img/touch/logo_152.png",
+    "type": "image/png",
+    "sizes": "152x152"
+  }, {
+    "src": "img/touch/logo_144.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  }, {
+    "src": "img/touch/logo_192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }, {
+    "src": "img/touch/logo_256.png",
+    "type": "image/png",
+    "sizes": "256x256"
+  }, {
+    "src": "img/touch/logo_512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F44336",
+  "theme_color": "#F44336"
+}

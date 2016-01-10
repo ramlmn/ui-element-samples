@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="Ram Lmn" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" sizes="256x256" href="/img/touch/logo_256.png">
+  <link rel="apple-touch-icon" href="/img/touch/logo_256.png'">
+  <meta name="theme-color" content="#F44336">
+
+  <title>Expand and collapse example</title>
+  <meta name="description" content="Sample of expand and collapse.">
+
+  <meta property="og:title" content="UI element samples">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ui-element-samples.firebaseapp.com/">
+  <meta property="og:image" content="https://ui-element-samples.firebaseapp.com/img/touch/logo_256.png">
+  <meta property="og:description" content="Sample of expand and collapse.">
+
+  <meta name="twitter:title" content="UI element samples">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ui-element-samples.firebaseapp.com/">
+  <meta name="twitter:image" content="https://ui-element-samples.firebaseapp.com/img/touch/logo_256.png">
+  <meta name="twitter:description" content="Sample of expand and collapse.">
+  <meta name="twitter:creator" content="@ramlmn">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #fafafa;
+      font-family: Roboto, Arial, sans-serif;
+      color: #404040
+    }
+
+    body {
+      display: flex;
+      flex-direction: column
+    }
+
+    .main {
+      flex: 1;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 0
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="main">
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/5.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/1.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/2.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/3.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/4.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/7.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__header">
+        <div class="item__header-image" data-bg="./images/6.png"></div>
+        <div class="item__header-text">Hello</div>
+        <span class="close material-icons">close</span>
+      </div>
+      <div class="item__content">
+        <ul class="item__list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+          <li>Item 11</li>
+          <li>Item 12</li>
+          <li>Item 13</li>
+          <li>Item 14</li>
+          <li>Item 15</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

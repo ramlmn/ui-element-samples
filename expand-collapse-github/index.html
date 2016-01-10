@@ -1,0 +1,66 @@
+<!--
+
+Copyright 2015 Google Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Paul Lewis" />
+  <meta name="viewport" content="width=device-width">
+  <title>Expand + Collapse</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Works around crbug.com/577211 -->
+  <button style="font-feature-settings: initial" class="close material-icons">&#xE5C4;</button>
+
+  <div class="item">
+    <div class="item__header">
+      <img class="item__header-image" src="images/img.jpg">
+      <div class="item__header-underlay"></div>
+      <h1 class="item__title">Item Title</h1>
+    </div>
+
+    <div class="item__underlay"></div>
+    <ul class="item__list">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+      <li>List item 4</li>
+      <li>List item 5</li>
+      <li>List item 6</li>
+      <li>List item 7</li>
+      <li>List item 8</li>
+      <li>List item 9</li>
+      <li>List item 10</li>
+      <li>List item 11</li>
+      <li>List item 12</li>
+      <li>List item 13</li>
+      <li>List item 14</li>
+      <li>List item 15</li>
+      <li>List item 16</li>
+    </ul>
+  </div>
+
+  <script src="flip.js"></script>
+  <script src="demo.js"></script>
+
+</body>
+</html>
