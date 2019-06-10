@@ -41,13 +41,13 @@ body {
   flex-wrap: wrap;
   overflow: auto;
   backface-visibility: hidden;
-  background: url('7.jpg') no-repeat center / cover transparent;
+  background: url('./7.jpg') no-repeat center / cover transparent;
 }
 
 .header {
   height: 40vh;
   width: 100%;
-  background: url('7.jpg') no-repeat center / cover transparent;
+  background: url('./7.jpg') no-repeat center / cover transparent;
 }
 
 .overlay {
